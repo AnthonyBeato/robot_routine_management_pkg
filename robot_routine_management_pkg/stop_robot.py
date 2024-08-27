@@ -15,6 +15,10 @@ class StopRobot(Node):
     def stop_robot(self):
         msg = Twist()
         msg.linear.x = 0.0
+        msg.linear.y = 0.0
+        msg.linear.z = 0.0
+        msg.angular.x = 0.0
+        msg.angular.y = 0.0
         msg.angular.z = 0.0
         self.publisher_.publish(msg)
         self.get_logger().info('Stop command sent to the robot.')
